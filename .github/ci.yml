@@ -1,0 +1,20 @@
+on:
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  get-diff:
+    runs-on: ubuntu-latest
+    name: Try to get diff
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Get Diff Step
+        uses: ./actions/get-diff
+      - name: Get if public was changed
+        run: echo "The time was ${{ steps.hello.outputs.public }}"
+      - name: Get if puppeteer has changed
+        run: echo "The time was ${{ steps.hello.outputs.puppeteer }}"
