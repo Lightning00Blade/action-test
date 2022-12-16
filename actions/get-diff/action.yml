@@ -3,8 +3,3 @@ description: 'Get changed packages'
 runs:
   using: 'node16'
   main: 'dist/index.js'
-outputs:
-  public:
-    description: 'Public has changed'
-  puppeteer: 
-    description: 'Puppeteer has changed'
