@@ -18,6 +18,6 @@ jobs:
         id: diff
         uses: ./actions/get-diff
       - name: Get if public was changed
-        run: echo "Public was ${{ steps.diff.outputs.changes.public }}"
+        run: echo "Public was ${{ steps.diff.outputs.public }}"
       - name: Get if puppeteer has changed
-        run: echo "Puppeteer was ${{ steps.diff.outputs.changes.puppeteer }}"
+        run: echo "Puppeteer was ${{ steps.diff.outputs.puppeteer }}"
