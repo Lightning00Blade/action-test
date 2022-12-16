@@ -12,6 +12,8 @@ jobs:
       # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
       - name: Get Diff Step
         uses: ./actions/get-diff
       - name: Get if public was changed
