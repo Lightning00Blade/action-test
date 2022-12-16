@@ -3,3 +3,6 @@ description: 'Get changed packages'
 runs:
   using: 'node16'
   main: 'dist/index.js'
+outputs:
+  changes: # id of output
+    description: 'Object with packages that have changed'
