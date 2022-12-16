@@ -64,7 +64,7 @@ async function main() {
   }
 
   for (const key in dirs) {
-    core.setOutput('changes', changesSet.has(key));
+    core.setOutput(key, changesSet.has(key));
   }
 }
 
