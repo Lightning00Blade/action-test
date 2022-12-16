@@ -15,8 +15,9 @@ jobs:
         with:
           fetch-depth: 2
       - name: Get Diff Step
+        id: diff
         uses: ./actions/get-diff
       - name: Get if public was changed
-        run: echo "The time was ${{ steps.hello.outputs.public }}"
+        run: echo "Public was ${{ steps.diff.outputs.changes.public }}"
       - name: Get if puppeteer has changed
-        run: echo "The time was ${{ steps.hello.outputs.puppeteer }}"
+        run: echo "Puppeteer was ${{ steps.diff.outputs.changes.puppeteer }}"
