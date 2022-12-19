@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Try to get diff
     outputs:
-      diff: ${{ steps.diff.output.changesString }}
+      diff: ${{ steps.diff.output.all }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v3.0.2
