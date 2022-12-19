@@ -60,6 +60,16 @@ async function main() {
   for (const key in dirs) {
     setOutput(key, changesSet.has(key));
   }
+
+  let changesString = "";
+
+  for (const key in dirs) {
+    if (changesSet.has(key)) {
+      changesString += `${key}+`;
+    }
+  }
+
+  setOutput("all", changesString);
 }
 
 main().catch((error) => {
