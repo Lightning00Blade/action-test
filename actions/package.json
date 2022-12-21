@@ -1,0 +1,11 @@
+{
+  "name": "@puppeteer/actions",
+  "private": "true",
+  "version": "0.0.0",
+  "description": "Custom Puppeteer actions that will ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -p ./tsconfig.json"
+  },
+  "author": ""
+}

@@ -57,19 +57,17 @@ async function main() {
     }
   }
 
-  for (const key in dirs) {
-    setOutput(key, changesSet.has(key));
-  }
-
+  // Use a string rather then individual export as we can't easily remap
+  // from step output to job output
   let changesString = "";
-
   for (const key in dirs) {
     if (changesSet.has(key)) {
+      // Add a delimiter for easier debugging
       changesString += `${key}+`;
     }
   }
 
-  setOutput("all", changesString);
+  setOutput("packages", changesString);
 }
 
 main().catch((error) => {
