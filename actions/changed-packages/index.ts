@@ -60,14 +60,18 @@ async function main() {
   // Use a string rather then individual export as we can't easily remap
   // from step output to job output
   let changesString = "";
+  let changesArray = [];
   for (const key in dirs) {
     if (changesSet.has(key)) {
       // Add a delimiter for easier debugging
       changesString += `${key}+`;
+      changesArray.push(key);
     }
   }
 
   setOutput("packages", changesString);
+
+  setOutput("packagesArray", changesArray);
 }
 
 main().catch((error) => {
